@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Pavel Kazimirov — travel history and visited countries." />
+  <title>Pavel — Travel History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f5f2; --panel:rgba(255,255,255,.78); --solid:#fff; --text:#111;
+      --muted:#6b6b67; --line:#deded8; --accent:#111; --shadow:0 18px 50px rgba(0,0,0,.07);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 15% 0%,#fff 0,#f5f5f2 34%,#eeeeea 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.5}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+    header{padding:74px 0 34px}
+    .eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    h1{font:700 clamp(3rem,8vw,6.2rem)/.92 'Space Grotesk',sans-serif;letter-spacing:-.055em;margin:10px 0 18px}
+    .intro{max-width:660px;font-size:1.08rem;color:var(--muted);margin:0}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .pill{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.55);font-weight:600;font-size:.9rem;color:inherit;text-decoration:none}
+    .pill:hover{background:#fff;transform:translateY(-1px)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+    .stat{background:var(--panel);backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,.06);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+    .stat .n{font:700 2rem/1 'Space Grotesk';letter-spacing:-.03em}
+    .stat .l{color:var(--muted);font-size:.85rem;margin-top:7px}
+    section{margin:52px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
+    h2{font:700 2rem/1.1 'Space Grotesk';letter-spacing:-.035em;margin:0}
+    .note{color:var(--muted);font-size:.88rem}
+    .country-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .country{border:1px solid var(--line);background:rgba(255,255,255,.58);border-radius:20px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .country-main{display:flex;align-items:center;gap:12px;min-width:0}
+    .flag{font-size:1.55rem;width:30px;text-align:center}
+    .country-name{font-weight:700}.visits{color:var(--muted);font-size:.9rem}
+    .bar{height:7px;background:#e8e8e3;border-radius:999px;overflow:hidden;margin-top:9px;width:min(260px,32vw)}
+    .bar i{display:block;height:100%;background:#111;border-radius:999px}
+    .year-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    button{font:600 .88rem Inter;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;cursor:pointer}
+    button.active{background:#111;color:#fff;border-color:#111}
+    .timeline{display:flex;flex-direction:column;gap:12px}
+    .trip{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:start;border:1px solid var(--line);background:var(--panel);border-radius:22px;padding:19px}
+    .trip-date{font:700 1rem 'Space Grotesk';letter-spacing:-.01em}.trip-year{display:block;color:var(--muted);font:600 .78rem Inter;margin-top:3px}
+    .trip-title{font-size:1rem;font-weight:700}.trip-place{color:var(--muted);font-size:.9rem;margin-top:3px}.trip-meta{color:var(--muted);font-size:.78rem;text-align:right;white-space:nowrap}
+    .tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{padding:5px 8px;background:#f0f0eb;border-radius:999px;font-size:.75rem;color:#333}.highlight{padding:5px 8px;background:#111;color:#fff;border-radius:999px;font-size:.75rem;font-weight:600}
+    footer{padding:30px 0 70px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+    .empty{padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}
+    @media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.country-grid{grid-template-columns:1fr}.trip{grid-template-columns:1fr;gap:8px}.trip-meta{text-align:left}.bar{width:100%}header{padding-top:46px}}
+    @media(max-width:480px){.wrap{width:min(100% - 22px,1120px)}.stats{gap:8px}.stat{padding:16px;border-radius:17px}.stat .n{font-size:1.55rem}.country{padding:15px}.trip{padding:16px;border-radius:18px}h2{font-size:1.65rem}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">Travel history</div>
+      <h1>my travels.</h1>
+      <p class="intro">mostly somewhere else. a running record of the places I’ve been to.</p>
+      <div class="links">
+        <a class="pill" href="#countries">🌍 Countries</a>
+        <a class="pill" href="#timeline">✈️ Trips</a>
+      </div>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <section id="countries">
+      <div class="section-head">
+        <div><h2>Countries</h2><div class="note">Repeat visits count separately.</div></div>
+      </div>
+      <div class="country-grid" id="countryGrid"></div>
+    </section>
+
+    <section id="timeline">
+      <div class="section-head">
+        <div><h2>Trip history</h2><div class="note">Trips, concerts, school trips, and longer stays.</div></div>
+      </div>
+      <div class="year-tabs" id="yearTabs"></div>
+      <div class="timeline" id="timelineList"></div>
+    </section>
+
+    <footer>
+      Built as a lightweight personal travel page. Last updated: September 2026.
+    </footer>
+  </main>
+
+<script>
+const countries = [
+  {name:'Italy', flag:'🇮🇹', visits:5},
+  {name:'Denmark', flag:'🇩🇰', visits:4},
+  {name:'Sweden', flag:'🇸🇪', visits:4},
+  {name:'Latvia', flag:'🇱🇻', visits:4},
+  {name:'Türkiye', flag:'🇹🇷', visits:3},
+  {name:'Spain', flag:'🇪🇸', visits:3},
+  {name:'Poland', flag:'🇵🇱', visits:3},
+  {name:'United Kingdom', flag:'🇬🇧', visits:2},
+  {name:'France', flag:'🇫🇷', visits:2},
+  {name:'Greece', flag:'🇬🇷', visits:1},
+  {name:'Austria', flag:'🇦🇹', visits:1},
+  {name:'Netherlands', flag:'🇳🇱', visits:1},
+  {name:'Finland', flag:'🇫🇮', visits:1},
+  {name:'Germany', flag:'🇩🇪', visits:1},
+  {name:'Japan', flag:'🇯🇵', visits:1},
+  {name:'Estonia', flag:'🇪🇪', visits:1}
+];
+
+const trips = [
+  {year:2008,date:'31 May – 6 June', title:'Alanya', countries:['Türkiye'], details:['Alanya']},
+  {year:2013,date:'28 September – 5 October', title:'Heraklion', countries:['Greece'], details:['Heraklion']},
+  {year:2016,date:'8 – 12 January', title:'Copenhagen & London', countries:['Denmark','United Kingdom'], details:['Copenhagen','London'], note:'8 Jan: flew to Copenhagen · 9 Jan: Copenhagen → London.'},
+  {year:2016,date:'7 – 17 August', title:'Malmö & Zealand', countries:['Sweden','Denmark'], details:['Malmö','Sjællands Odde','Billund'], note:'Malmö was mainly the arrival airport; continued into Denmark by car. Also visited Billund.'},
+  {year:2016,date:'3 – 8 October', title:'Rome', countries:['Italy'], details:['Rome']},
+  {year:2017,date:'3 – 10 June', title:'Barcelona', countries:['Spain'], details:['Barcelona','Tarragona']},
+  {year:2018,date:'September', title:'Riga', countries:['Latvia'], details:['Riga'], note:'Basketball championship.'},
+  {year:2018,date:'15 – 19 October', title:'Milan', countries:['Italy'], details:['Milan','Lake Como']},
+  {year:2019,date:'26 – 29 April', title:'Copenhagen', countries:['Denmark'], details:['Copenhagen']},
+  {year:2019,date:'1 – 2 June', title:'Warsaw', countries:['Poland'], details:['Warsaw'], note:'School trip · by bus.'},
+  {year:2019,date:'12 – 13 June', title:'Riga', countries:['Latvia'], details:['Riga'], note:'Muse concert · by bus.'},
+  {year:2019,date:'September', title:'Riga', countries:['Latvia'], details:['Riga'], note:'Basketball championship.'},
+  {year:2020,date:'21 – 28 July', title:'Rome', countries:['Italy'], details:['Rome','Tivoli']},
+  {year:2021,date:'9 – 16 October', title:'Málaga', countries:['Spain'], details:['Málaga','Ronda','Granada']},
+  {year:2022,date:'14 – 17 June', title:'Kraków & Vienna', countries:['Poland','Austria'], details:['Kraków','Vienna'], note:'Trip with friends · by car, flew back.'},
+  {year:2022,date:'24 – 27 June', title:'London', countries:['United Kingdom'], details:['London'], note:'Green Day + Red Hot Chili Peppers concerts.'},
+  {year:2023,date:'30 April – 2 May', title:'Tallinn, Stockholm & Tartu', countries:['Estonia','Sweden'], details:['Tallinn','Stockholm','Tartu'], note:'School trip · Tallinn by bus, Stockholm by ferry, then Tartu by bus.'},
+  {year:2023,date:'22 – 24 May', title:'Stockholm', countries:['Sweden'], details:['Stockholm'], note:'Depeche Mode concert.'},
+  {year:2023,date:'6 – 9 June', title:'Amsterdam', countries:['Netherlands'], details:['Amsterdam','The Hague'], note:'Muse concert.'},
+  {year:2023,date:'20 – 22 June', title:'Warsaw', countries:['Poland'], details:['Warsaw'], note:'Red Hot Chili Peppers concert · by train + car.'},
+  {year:2023,date:'25 – 31 October', title:'Rome', countries:['Italy'], details:['Rome','Tivoli']},
+  {year:2024,date:'16 – 19 June', title:'Paris', countries:['France'], details:['Paris'], note:'Green Day concert.'},
+  {year:2024,date:'29 July – 2 August', title:'Helsinki & Riga', countries:['Finland','Latvia'], details:['Helsinki','Riga'], note:'Coldplay concert · Riga was 1–2 Aug.'},
+  {year:2024,date:'1 – 7 October', title:'Rome → Naples → Capri', countries:['Italy'], details:['Rome','Tivoli','Naples','Capri']},
+  {year:2024,date:'4 – 6 December', title:'Paris', countries:['France'], details:['Paris'], note:'Paul McCartney concert.'},
+  {year:2025,date:'January – March', title:'Copenhagen', countries:['Denmark'], details:['Copenhagen'], note:'Living in Denmark.'},
+  {year:2025,date:'23 – 25 June', title:'Stockholm', countries:['Sweden'], details:['Stockholm'], note:'Green Day concert.'},
+  {year:2025,date:'21 – 28 August', title:'Barcelona', countries:['Spain'], details:['Barcelona','Salou','Montserrat']},
+  {year:2025,date:'8 – 10 December', title:'Berlin', countries:['Germany'], details:['Berlin'], note:'Radiohead concert.'},
+  {year:2026,date:'7 – 10 April', title:'Side', countries:['Türkiye'], details:['Side'], note:'Trip with friends.'},
+  {year:2026,date:'7 – 31 July', title:'Istanbul & Japan', countries:['Türkiye','Japan'], details:['Istanbul','Osaka','Kyoto','Tokyo','Kobe','Nagoya','Uji','Kawaguchiko','Hakone','Yokohama'], note:'7–8 Jul: Istanbul · 8–29 Jul: Japan · 30–31 Jul: Istanbul.'}
+];
+
+const totalVisits = countries.reduce((a,c)=>a+c.visits,0);
+const totalTrips = trips.length;
+const firstYear = Math.min(...trips.map(t=>t.year));
+const lastYear = Math.max(...trips.map(t=>t.year));
+
+document.getElementById('stats').innerHTML = [
+  [countries.length,'countries'],
+  [totalVisits,'country visits'],
+  [totalTrips,'recorded trips'],
+  [`${firstYear}–${lastYear}`,'travel period']
+].map(([n,l])=>`<div class="stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+
+const maxVisits = Math.max(...countries.map(c=>c.visits));
+document.getElementById('countryGrid').innerHTML = [...countries].sort((a,b)=>b.visits-a.visits || a.name.localeCompare(b.name)).map(c=>`
+  <div class="country">
+    <div class="country-main"><div class="flag">${c.flag}</div><div><div class="country-name">${c.name}</div><div class="visits">${c.visits} visit${c.visits===1?'':'s'}</div><div class="bar"><i style="width:${(c.visits/maxVisits)*100}%"></i></div></div></div>
+    <div class="visits">${c.visits}×</div>
+  </div>`).join('');
+
+const years = [...new Set(trips.map(t=>t.year))].sort((a,b)=>a-b);
+const tabWrap = document.getElementById('yearTabs');
+const all = document.createElement('button'); all.textContent='All years'; all.className='active'; all.dataset.year='all'; tabWrap.appendChild(all);
+years.forEach(y=>{const b=document.createElement('button');b.textContent=y;b.dataset.year=y;tabWrap.appendChild(b)});
+
+function flagFor(name){ return countries.find(c=>c.name===name)?.flag || ''; }
+function renderTrips(year='all'){
+  const filtered = year==='all' ? trips : trips.filter(t=>t.year===Number(year));
+  document.getElementById('timelineList').innerHTML = filtered.length ? filtered.map(t=>`
+    <article class="trip">
+      <div class="trip-date">${t.date}<span class="trip-year">${t.year}</span></div>
+      <div>
+        <div class="trip-title">${t.title}</div>
+        <div class="trip-place">${t.details.join(' · ')}</div>
+        <div class="tag-row">${t.countries.map(c=>`<span class="tag">${flagFor(c)} ${c}</span>`).join('')}</div>
+        ${t.note ? `<div class="note" style="margin-top:9px">${t.note}</div>` : ''}
+      </div>
+      <div class="trip-meta">${t.countries.length} countr${t.countries.length===1?'y':'ies'}</div>
+    </article>`).join('') : '<div class="empty">No trips recorded for this year.</div>';
+}
+renderTrips();
+tabWrap.addEventListener('click',e=>{
+  if(e.target.tagName!=='BUTTON') return;
+  tabWrap.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  renderTrips(e.target.dataset.year);
+});
+</script>
+</body>
+</html>
