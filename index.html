@@ -108,16 +108,16 @@ const countries = [
 ];
 
 const trips = [
-  {year:2008,date:'31 May – 6 June', title:'Alanya', countries:['Türkiye'], details:['Alanya']},
+  {year:2008,date:'31 May – 6 June', title:'Alanya', countries:['Türkiye'], details:['Alanya'], note:'imma be fr i dont remember shit i was 2 years old},
   {year:2013,date:'28 September – 5 October', title:'Heraklion', countries:['Greece'], details:['Heraklion']},
-  {year:2016,date:'8 – 12 January', title:'Copenhagen & London', countries:['Denmark','United Kingdom'], details:['Copenhagen','London'], note:'8 Jan: flew to Copenhagen · 9 Jan: Copenhagen → London.'},
-  {year:2016,date:'7 – 17 August', title:'Malmö & Zealand', countries:['Sweden','Denmark'], details:['Malmö','Sjællands Odde','Billund'], note:'Malmö was mainly the arrival airport; continued into Denmark by car. Also visited Billund.'},
+  {year:2016,date:'8 – 12 January', title:'Copenhagen & London', countries:['Denmark','United Kingdom'], details:['Copenhagen','London']},
+  {year:2016,date:'7 – 17 August', title:'Malmö & Zealand', countries:['Sweden','Denmark'], details:['Malmö','Sjællands Odde','Billund'], note:'Malmö was mainly the arrival airport; continued into Denmark by car.'},
   {year:2016,date:'3 – 8 October', title:'Rome', countries:['Italy'], details:['Rome']},
   {year:2017,date:'3 – 10 June', title:'Barcelona', countries:['Spain'], details:['Barcelona','Tarragona']},
   {year:2018,date:'September', title:'Riga', countries:['Latvia'], details:['Riga'], note:'Basketball championship.'},
   {year:2018,date:'15 – 19 October', title:'Milan', countries:['Italy'], details:['Milan','Lake Como']},
   {year:2019,date:'26 – 29 April', title:'Copenhagen', countries:['Denmark'], details:['Copenhagen']},
-  {year:2019,date:'1 – 2 June', title:'Warsaw', countries:['Poland'], details:['Warsaw'], note:'School trip · by bus.'},
+  {year:2019,date:'1 – 2 June', title:'Warsaw', countries:['Poland'], details:['Warsaw'], note:'School trip · by bus. No hotels. Thank you Puskino gimnazija.'},
   {year:2019,date:'12 – 13 June', title:'Riga', countries:['Latvia'], details:['Riga'], note:'Muse concert · by bus.'},
   {year:2019,date:'September', title:'Riga', countries:['Latvia'], details:['Riga'], note:'Basketball championship.'},
   {year:2020,date:'21 – 28 July', title:'Rome', countries:['Italy'], details:['Rome','Tivoli']},
@@ -132,15 +132,15 @@ const trips = [
   {year:2023,date:'25 – 31 October', title:'Rome', countries:['Italy'], details:['Rome','Tivoli']},
   {year:2024,date:'7 - 9 May', title:'Warsaw', countries:['Poland'], details:['Warsaw', 'Suntago']},
   {year:2024,date:'16 – 19 June', title:'Paris', countries:['France'], details:['Paris'], note:'Green Day concert.'},
-  {year:2024,date:'29 July – 2 August', title:'Helsinki & Riga', countries:['Finland','Latvia'], details:['Helsinki','Riga'], note:'Coldplay concert · Riga was 1–2 Aug.'},
+  {year:2024,date:'29 July – 2 August', title:'Helsinki & Riga', countries:['Finland','Latvia'], details:['Helsinki','Riga'], note:'Coldplay concert'},
   {year:2024,date:'1 – 7 October', title:'Rome → Naples → Capri', countries:['Italy'], details:['Rome','Tivoli','Naples','Capri']},
   {year:2024,date:'4 – 6 December', title:'Paris', countries:['France'], details:['Paris'], note:'Paul McCartney concert.'},
   {year:2025,date:'January – March', title:'Copenhagen', countries:['Denmark'], details:['Copenhagen'], note:'Living in Denmark.'},
   {year:2025,date:'23 – 25 June', title:'Stockholm', countries:['Sweden'], details:['Stockholm'], note:'Green Day concert.'},
   {year:2025,date:'21 – 28 August', title:'Barcelona', countries:['Spain'], details:['Barcelona','Salou', 'PortAventura', 'Montserrat']},
   {year:2025,date:'8 – 10 December', title:'Berlin', countries:['Germany'], details:['Berlin'], note:'Radiohead concert.'},
-  {year:2026,date:'7 – 10 April', title:'Side', countries:['Türkiye'], details:['Side'], note:'Trip with friends.'},
-  {year:2026,date:'7 – 31 July', title:'Istanbul & Japan', countries:['Türkiye','Japan'], details:['Istanbul','Osaka','Kyoto','Tokyo','Kobe','Nagoya','Uji','Kawaguchiko','Hakone','Yokohama'], note:'7–8 Jul: Istanbul · 8–29 Jul: Japan · 30–31 Jul: Istanbul.'}
+  {year:2026,date:'7 – 10 April', title:'Side', countries:['Türkiye'], details:['Side']},
+  {year:2026,date:'7 – 31 July', title:'Istanbul & Japan', countries:['Türkiye','Japan'], details:['Istanbul','Osaka','Kyoto','Tokyo','Kobe','Nagoya','Uji','Kawaguchiko','Hakone','Yokohama']}
 ];
 
 const totalVisits = countries.reduce((a,c)=>a+c.visits,0);
